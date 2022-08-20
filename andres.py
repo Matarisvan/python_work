@@ -8,3 +8,4 @@ print("Welcome", name.title() + "!")
 cost = (float(input("amount of feet required"))) * .87
 print(name.title(), "$" + str(cost))
 print("fuck this bullshit")
+print("how the goddamn fuck do i fucking push to github. this is so fucking frustrating)

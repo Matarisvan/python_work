@@ -6,4 +6,4 @@ print("Welcome!")
 name = input("company name")
 print("Welcome", name.title() + "!")
 cost = (float(input("amount of feet required"))) * .87
-print(name.title(), "$" + str(cost))
+print(name.title(), "Your total cost is", "$" + str(cost))

@@ -27,7 +27,7 @@ elif cost <= 499:
     cost = cost * .70
 else:
     cost = cost * .50
-# This block of code is what determines by how much the 
+# This block of code is what determines by how much to multiply the number inputted by user
 
 print(name.title() + ",", "Your total cost will be", "$" + str(cost))
 # The purpose here is to finalize the user's experience with the program and inform them of a final cost

@@ -15,19 +15,19 @@ print("Welcome", name.title() + "!")
 
 print("The cost of optic fiber cable per foot starts at $0.87 with discounts for Bulk Purchases!\n$0.80 after 100 feet\n$0.70 after 250 feet\n$0.50 after 500 feet")
 print
-cost = (float(input("How many feet would you like? ")))
+feet = (float(input("How many feet would you like? ")))
 # The purpose here is to let the user know how much each foot costs and to obtain the amount of feet the user requires for their project
 # The feet required is then multiplied by the cost to get a final amount of money
 
-if cost <= 99:
-    cost = cost * .87
-elif cost <= 249:
-    cost = cost * .80
-elif cost <= 499:
-    cost = cost * .70
+if feet <= 99:
+    cost = feet * .87
+elif feet <= 249:
+    cost = feet * .80
+elif feet <= 499:
+    cost = feet * .70
 else:
-    cost = cost * .50
+    cost = feet * .50
 # This block of code is what determines by how much to multiply the number inputted by user
 
-print(name.title() + ",", "Your total cost will be", "$" + str(cost))
+print(name.title() + ",", "You requested " + str(feet) + ", so your total cost will be", "$" + str(cost))
 # The purpose here is to finalize the user's experience with the program and inform them of a final cost

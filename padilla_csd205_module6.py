@@ -22,7 +22,7 @@ milan = {
     "90" : "Charles De Ketelaere"
 } # Dictionary
 
-for number, player in milan.items(): # gives a value to both the key and value in milan dictionary
+for number, player in milan.items(): # gives a variable to both the key and value in milan dictionary
     print(number, player)
 print()
 # number = milan.keys()

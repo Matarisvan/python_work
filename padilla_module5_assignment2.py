@@ -1,6 +1,6 @@
 # Luis Padilla
 # 08/31/22
-# CSD205 Module 5 Assignment
+# CSD205 Module 5 Assignment 2
 '''
 feet under 100 =    $0.87
 feet 100-249 =      $0.80

@@ -7,12 +7,11 @@ money = float(input("How much money are you investing?\t$"))
 rate = float(input("What is the interest rate?\t\t%")) * .01
 total = 0
 years = 1
+perYear = money * rate
 
-while total <= (money * 2):
-    change = money * rate
-    total = total + change
-    
-    print(years, "$", total, change)
+while total <= (money * 2):    
+    total = total + perYear
+    print(years, "$" + str(total))
     years += 1
 print("It took ", years - 1, " years to double your investment at an annually fixed percentage of ", rate,"%")
 print("congratulations!")

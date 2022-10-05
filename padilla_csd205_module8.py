@@ -23,5 +23,5 @@ miles = float(miles) # changing miles type to make sure it can be multiplied wit
 
 dist = miles * kilo # formula that converts miles into kilometers
 
-print(f"\nYou have driven ", dist, "kilometers!")
+print(f"\nYou have driven ", miles, "miles! That is the same as ", dist, "kilometers!")
 print("\nEvery mile that you drive is 1.609 Kilometers!\n")

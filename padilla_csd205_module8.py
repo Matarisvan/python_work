@@ -5,27 +5,23 @@
 
 print("\nWelcome to the Miles to Kilometers Converter!\n")
 
-try:
-    miles = float(input("How many miles have you driven this past year? "))
-    kilo = float(miles * 1.609)
-except:
-    print("error")
-print("Every mile that you drive is 1.609 Kilometers!")
+miles = (input("How many miles have you driven this past year?\n"))
+kilo = float(1.609)
+crtNum = True
 
-def drive():
-    miles = float(input("Miles driven:\n"))
-    if miles >=1:
-        print("You have driven", kilo, "kilometers this year!")
+# loop to check if value entered is a number(float in this situation)
+while crtNum:
+    try:
+        float(miles)
+    except ValueError:
+        print("Error, please enter a number")
+        miles = input()
     else:
-        print("That is an impossible amount. Please Try again!\t")
-        drive()
-drive()
+        crtNum = False
 
+miles = float(miles) # changing miles type to make sure it can be multiplied with kilo
 
+dist = miles * kilo # formula that converts miles into kilometers
 
-'''
-if miles >= 1:
-    pass
-else:
-    drive()
-'''
+print(f"\nYou have driven ", dist, "kilometers!")
+print("\nEvery mile that you drive is 1.609 Kilometers!\n")

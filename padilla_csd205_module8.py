@@ -13,7 +13,7 @@ except:
 print("Every mile that you drive is 1.609 Kilometers!")
 
 def drive():
-    miles = float(input("miles"))
+    miles = float(input("Miles driven:\n"))
     if miles >=1:
         print("You have driven", kilo, "kilometers this year!")
     else:

@@ -38,7 +38,7 @@ while x >= 0:
 print("muchas gracias")
 '''
 
-'''
+
 #Classes Inheritance
 
 class Person:
@@ -59,7 +59,7 @@ exEmployee = Employee("Bill", "Gates", "1983")
 
 print(exPerson.Name())
 print(exEmployee.GetEmployee())
-'''
+
 '''
 #Overriding Classes
 class SavingsAccount:

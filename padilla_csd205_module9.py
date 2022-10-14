@@ -101,6 +101,11 @@ opt3 = "deposit",
 opt4 = "check savings bal",
 opt5 = "calc sav int"
        
+#
+#
+#
+#
+#
 
 def main():
     print("\nPlease select an option between 1 and 5:\t")
@@ -109,17 +114,14 @@ def main():
     option = input() 
     while True:
         try:
-            float(option)
-            if float(option) <= 5 and float(option) >= 1:
-                break
-            
+            float(option.range[1:6])
         except ValueError:
             print("\nError, please select an option:")
             for opts in options:
                 print(opts)
             option = input()
-        #if options <= 5 and options >= 1:
-         #   break
+        if options <= 5 and options >= 1:
+            break
     while True:
 
         if option == "1":

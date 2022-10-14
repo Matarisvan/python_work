@@ -21,12 +21,11 @@ Try/Except Blocks, allow the user to continue to run the program, and to exit th
 formatting methods, etc.
 '''
 
-
-
+# Defining Parent Class
 class BankAct:
     def __init__(self,actNum, actBal):
         self.actNum = actNum
-        self.actBal = actBal
+        self.actBal = float(actBal)
     def getActNum(self):
         return self.actNum
     def getBal(self):
@@ -34,15 +33,23 @@ class BankAct:
     
     def deposit(self, dep):
         self.dep = dep
-        self.actBal = self.actBal + dep 
+        depAmt = input("How much would you like to deposit?\t$")
+        try:
+            float(depAmt)
+            self.actBal = float(self.actBal) + float(depAmt)
+            print("Your balance is now $", self.actBal)
+        except ValueError:
+            print("Please enter an amount:")
+            depAmt = input()
 
     def withdraw(self, wdrw):
         self.wdrw = wdrw
         self.actBal = self.actBal - wdrw
 
+# Defining Child Class 1
 class CheckingAct(BankAct):
-    def __init__(self, actNum, actBal, fees, minBal ):
-        super().__init__(self, actNum, actBal)
+    def __init__(self, actNum, actBal, fees, minBal):
+        super().__init__(actNum, actBal)
         self.fees = fees
         self.minBal = minBal
     def getFees(self):
@@ -50,32 +57,85 @@ class CheckingAct(BankAct):
     def getMinBal(self):
         return self.minBal
 
+# Defining Child Class 2
 class SavingsAct(BankAct):
     def __init__(self, actNum, actBal, intRate):
-        super().__init__(self, actNum, actBal)
+        super().__init__(actNum, actBal)
         self.intRate = intRate
         
     def addInt(self):
         return self.intRate
 
+# 2 Different Accounts for each type of Child
+milan1 = CheckingAct(1899, 200, 5, 50)
+milan2 = SavingsAct(1899, 200, .02)
+chelsea1 = CheckingAct(1905, 25, 5, 50)
+chelsea2 = SavingsAct(1905, 25, .02)
 
-Milan = BankAct("1899", "200")
-Chelsea = BankAct("1905", "25")
+print("\nWelcome to your local Bank!\n\nWhich account will you be using?")
 
+# Selecting User
+def selUser():
+    global user
+    user = input("Checking Account or Savings Account?\t")
+    if user.lower() == "checking":
+        user = milan1
+    elif user.lower() == "savings":
+        user = chelsea2
+    else:
+        selUser()
+selUser()
+
+# List of Options
+options = (
+"opt1 = check balance",
+"opt2 = withdraw",
+"opt3 = deposit",
+"opt4 = check savings bal",
+"opt5 = calc sav int")
+
+# List of Valued Options
+opt1 = "check balance",
+opt2 = "withdraw",
+opt3 = "deposit",
+opt4 = "check savings bal",
+opt5 = "calc sav int"
+       
 
 def main():
-    print("\nWelcome to your local Bank!\nWhich account will you be using?\n")
-    user = input("Are you a Milan fan or a Chelsea fan?\t")
-    userT = True
-    while userT:
+    print("\nPlease select an option between 1 and 5:\t")
+    for opts in options:
+        print(opts)
+    option = input() 
+    while True:
         try:
-            if user.lower() == "milan":
-                Milan()
-            elif user.lower() == "chelsea":
-                Chelsea()
-        except:
-            user = input()
-        else:
-            userT = False
-main()
+            float(option)
+            if float(option) <= 5 and float(option) >= 1:
+                break
+            
+        except ValueError:
+            print("\nError, please select an option:")
+            for opts in options:
+                print(opts)
+            option = input()
+        #if options <= 5 and options >= 1:
+         #   break
+    while True:
+
+        if option == "1":
+            print(opt1)
+            break
+        elif option == "2":
+            print(opt2)
+            break
+        elif option == "3":
+            print(opt3)
+            break
+        elif option == "4":
+            print(opt4)
+            break
+        elif option == "5":
+            print(opt5)
+            break
         
+main()

@@ -18,4 +18,4 @@ while total <= (money * 2):
     #print(years, "$" + str(total)) # print this to see each year's total
     years += 1
 print("It took ", years, " years to double your investment at an annually fixed percentage of ", rate,"%\nYou now have $", total, "!")
-print("Congratulations! Your investment brought in $" + str(perYear), " every year!\n")
+print("Congratulations! Your investment brought in $" + str(perYear), " last year!\n")
